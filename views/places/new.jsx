@@ -1,24 +1,45 @@
-const router = require('express').Router()
+const React = require('react')
+const Def = require('../default')
 
-router.get('/', (req, res) => {
-    res.send('GET /places')
-})
-app.get('/', (req, res) => {
-        let places = [{
-            name: 'H-Thai-ML',
-            city: 'Seattle',
-            state: 'WA',
-            cuisines: 'Thai, Pan-Asian',
-            pic: 'http://placekitten.com/250/250'
-          }, {
-            name: 'Coding Cat Cafe',
-            city: 'Phoenix',
-            state: 'AZ',
-            cuisines: 'Coffee, Bakery',
-            pic: 'http://placekitten.com/250/250'
-          }]        
-    res.render('places/index', {places}) 
-})
+function new_form () {
+    return (
+        <Def>
+          <main>
+            <h1>Add a New Place</h1>
+            <form method="POST" action="/places">
+  <div className="form-group">
+    <label htmlFor="name">Place Name</label>
+    <input className="form-group" id="name" name="name" />
+  </div>
+  <div className="form-group">
+    <label htmlFor="pic">Place Picture</label>
+    <input className="form-group" id="pic" name="pic" />
+  </div>
+  <div className="form-group">
+    <label htmlFor="city">City</label>
+    <input className="form-group" id="city" name="city" />
+  </div>
+  <div className="form-group">
+    <label htmlFor="state">State</label>
+    <input className="form-group" id="state" name="state" />
+  </div>
+  <div className="form-group">
+    <label htmlFor="cuisines">Cuisines</label>
+    <input className="form-group" id="cuisines" name="cuisines" />
+  </div>
+  <input className="btn btn-primary" type="submit" value="Add Place" />
+  <div className="form-group">
+  <label for="founded">Founded Year</label>
+  <input className="form-control" id="founded" name="founded" />
+</div>
+
+</form>
 
 
-module.exports = router
+          </main>
+        </Def>
+    )
+}
+
+module.exports = new_form
+
