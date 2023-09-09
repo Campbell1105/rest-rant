@@ -29,6 +29,24 @@ function new_form(data) {
           </div>
           <input className="btn btn-primary" type="submit" value="Add Place" />
         </form>
+        <form method="POST" action={`seeders\seed-comments$(data.seeder.id)?_method=PUT`}>
+        <div className="form-group">
+            <label htmlFor="author">Author</label>
+            <input className="form-group" id="author" name="author" value={data.seeder.name} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="content">Content</label>
+            <input className="form-group" id="comment" name="content"  />
+            <div className="form-group">
+            <label htmlFor="star-rating">Star Rating</label>
+            <input className="form-group" id="star-rating" name="start-rating" />
+            <div className="form-group">
+            <label htmlFor="Rant">Rant</label>
+            <input className="form-group" id="Rant" name="Rant" />
+          </div>
+          </div>
+          </div>
+        </form>
       </main>
     </Def>
   );
